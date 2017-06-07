@@ -6,12 +6,15 @@ Usage:
 ```python
   import generator
   
+  # Load the key
   KEY = generator.load_key()
   
+  # Key exists set max length
   if KEY != None:
 	  # Loaded key lets set the max_length
 	  MAX_LENGTH = len(KEY)
 
+  # Key does not exist
   elif KEY == None:
 	  # Unable to load key
 	  # So we load default values
@@ -24,4 +27,7 @@ Usage:
    
    print("URL: {}".format(url))
    print("KEY: {}".format(KEY))
+   
+   # Save the incremented key
+   generator.save_key(KEY)
 ```
