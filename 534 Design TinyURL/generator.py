@@ -170,6 +170,8 @@ elif KEY == None:
 
 # === ... TESTING ... ===
 
+# UNCOMMENT FOR TESTING
+"""
 print("STARTING KEY = {}".format(KEY))
 
 for x in range(LOOP_TEST):
@@ -181,5 +183,6 @@ print("NEW KEY = {}".format(KEY))
 save_key()
 
 end_time = time.time()
+"""
 
 print("GENERATED {} URL'S IN {} SECONDS".format(LOOP_TEST, (end_time - start_time)))
