@@ -33,17 +33,23 @@ class custom_cycle:
 
 
 
-#################
-# TESTING USAGE #
-#################
+##############################
+# TESTING USAGE AND EXAMPLES #
+##############################
 
 def main():
 	# Testing
-	x = custom_cycle('sander')
+	x = custom_cycle('foobar')
 
-	print()
-	for y in range(50):
+	for xx in range(15):
 		print(x.next_item())
+
+
+	test_array = ['hello', 'testing', 'foo', 'bar']
+	y = custom_cycle(test_array)
+
+	for yy in range(10):
+		print(y.next_item())
 
 
 if __name__ == '__main__':
