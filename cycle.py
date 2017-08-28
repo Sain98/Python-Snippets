@@ -55,21 +55,21 @@ def main():
 	
 	Output:
 	
-	s
+	f
+	o
+	o
+	b
 	a
-	n
-	d
-	e
 	r
-	s
+	f
+	o
+	o
+	b
 	a
-	n
-	d
-	e
 	r
-	s
-	a
-	n
+	f
+	o
+	o
 	hello
 	testing
 	foo
