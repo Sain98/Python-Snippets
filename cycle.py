@@ -50,6 +50,38 @@ def main():
 
 	for yy in range(10):
 		print(y.next_item())
+		
+	"""
+	
+	Output:
+	
+	s
+	a
+	n
+	d
+	e
+	r
+	s
+	a
+	n
+	d
+	e
+	r
+	s
+	a
+	n
+	hello
+	testing
+	foo
+	bar
+	hello
+	testing
+	foo
+	bar
+	hello
+	testing
+	
+	"""
 
 
 if __name__ == '__main__':
