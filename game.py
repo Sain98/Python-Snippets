@@ -11,7 +11,10 @@ def user_choice():
 	try:
 		choice = int(input("Choice: "))
 	except ValueError:
+		# no valid number, you can choose how to handle it
+		# Im lazy so i just let it set a number for the user
 		print("Not a number")
+		choice = 1
 
 	# Return the user's input so we can store it
 	return choice
