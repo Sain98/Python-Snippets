@@ -1,5 +1,7 @@
 import random
 
+# Tested with python version 3.6
+
 def computer_choice():
 	# Get the computer's choice:
 	# cmp_choice = random.randint(1, 3)
