@@ -8,6 +8,7 @@ def computer_choice():
 
 def user_choice():
 	# Get user input:
+	# Also making sure he inputs a integer (number)
 	try:
 		choice = int(input("Choice: "))
 	except ValueError:
