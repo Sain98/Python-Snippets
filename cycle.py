@@ -15,8 +15,8 @@ class cycle:
 		else it would throw: IndexError: string index out of range
 		
 		Example usage:
-		cycle(['foo', 'bar'])
-		print(next(your_variable))
+		x = cycle(['foo', 'bar'])
+		print(next(x))
 
 		output:
 		foo
