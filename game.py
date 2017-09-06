@@ -25,7 +25,7 @@ def user_choice():
 def get_outcome(u_choice, cmp_choice):
 	# Rock < Paper < Scissors < Rock
 	# 1: 'Rock', 2: 'Paper', 3: 'Scissors'
-	u_win = {1: 3, 2: 1, 3: 1}	# Rock beats Scissors, Paper beats Rock, Scissors beat Paper
+	u_win = {1: 3, 2: 1, 3: 2}	# Rock beats Scissors, Paper beats Rock, Scissors beat Paper
 
 	if u_choice == cmp_choice:
 		print("It is a tie!")
