@@ -43,6 +43,12 @@ def get_outcome(u_choice, cmp_choice):
 
 
 def set_score(score, outcome):
+	scores_inc = {'win': +1, 'lose': -1, 'tie': -0.5}
+
+	return (score + scores_inc[outcome])
+
+	"""
+	# Old version:
 	if outcome == 'win':
 		score = score + 1
 
@@ -51,8 +57,9 @@ def set_score(score, outcome):
 
 	elif outcome == 'tie':
 		score = score - 0.5
-
+	
 	return score
+	"""
 
 
 def main():
