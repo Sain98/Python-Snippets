@@ -15,3 +15,6 @@ foo
 bar
 foo
 ```
+
+# Game.py
+Simple rock paper scissor game made as an example on how to use functions
