@@ -95,5 +95,3 @@ ASCII example
 	ASCII: a | DEC: 97 | HEX: 0x61
 	ASCII: i | DEC: 105 | HEX: 0x69
 	ASCII: n | DEC: 110 | HEX: 0x6e
-
-### Source code:
