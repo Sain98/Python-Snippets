@@ -39,9 +39,9 @@ def convert(input_type, input_value):
 			)
 
 
-def convert_value_hex_dec(hex_value):
+def convert_value_hex_dec(src_value):
 	try:
-		return int(hex_value, 16)	# Hex -> dec (hex is base 16)
+		return int(src_value, 16)	# Hex -> dec (hex is base 16)
 	except ValueError as ve:
 		print("Not a valid number!")
 		return 0
@@ -53,8 +53,8 @@ def convert_value_str_dec(src_value):
 		print("Not a valid number!")
 		return 0
 
-def convert_value_dec_hex(dec_value):
-	return hex(dec_value)			# Dec -> hex
+def convert_value_dec_hex(src_value):
+	return hex(src_value)			# Dec -> hex
 
 def convert_value_to_ascii(src_value):
 	return chr(src_value)			# hex, dec -> ascii
