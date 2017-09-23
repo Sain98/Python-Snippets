@@ -60,7 +60,7 @@ def convert_value_to_ascii(src_value):
 	return chr(src_value)			# hex, dec -> ascii
 
 def convert_value_to_bin(src_value):
-	return bin(src_value)[2:]		# dec -> bin Ignore the '0b'
+	return bin(src_value)[2:]		# dec -> bin | Ignore the '0b'
 
 def convert_value_ascii_hex(src_value):
 	return hex(ord(src_value))		# ascii -> hex
