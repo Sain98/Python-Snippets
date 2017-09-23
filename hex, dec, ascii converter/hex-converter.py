@@ -8,7 +8,7 @@ def convert(input_type, input_value):
 	if input_type == 'hex':
 		input_value_dec = convert_value_hex_dec(input_value)
 		input_value_ascii = convert_value_to_ascii(input_value_dec)
-		input_value_bin = convert_value_to_bin(input_value_dec)
+		input_value_bin = convert_value_dec_bin(input_value_dec)
 
 		print("HEX: {} | DEC: {} | BIN: {} | ASCII: {}".format(
 			input_value, input_value_dec, input_value_bin, input_value_ascii
@@ -19,7 +19,7 @@ def convert(input_type, input_value):
 		input_value = convert_value_str_dec(input_value)
 		input_value_hex = convert_value_dec_hex(input_value)
 		input_value_ascii = convert_value_to_ascii(input_value)
-		input_value_bin = convert_value_to_bin(input_value)
+		input_value_bin = convert_value_dec_bin(input_value)
 
 		print("DEC: {} | HEX: {} | BIN: {} | ASCII: {}".format(
 			input_value, input_value_hex, input_value_bin, input_value_ascii
@@ -31,7 +31,7 @@ def convert(input_type, input_value):
 		for ch in input_value:
 			input_value_dec = convert_value_ascii_dec(ch)
 			input_value_hex = convert_value_ascii_hex(ch)
-			input_value_bin = convert_value_to_bin(input_value_dec).zfill(8)
+			input_value_bin = convert_value_dec_bin(input_value_dec).zfill(8)
 
 			print("ASCII: {} | HEX: {} | DEC: {} | BIN: {}".format(
 				ch, input_value_hex, input_value_dec, input_value_bin
@@ -59,7 +59,7 @@ def convert_value_dec_hex(src_value):
 def convert_value_to_ascii(src_value):
 	return chr(src_value)			# hex, dec -> ascii
 
-def convert_value_to_bin(src_value):
+def convert_value_dec_bin(src_value):
 	return bin(src_value)[2:]		# dec -> bin | Ignore the '0b'
 
 def convert_value_ascii_hex(src_value):
