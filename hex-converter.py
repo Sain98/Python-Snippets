@@ -109,7 +109,6 @@ def main():
 		print("Available exit commands: {}".format(exit_commands))
 		print("----")
 
-	if args.direct == False:
 		while user_in not in exit_commands:
 			user_in = input("{}: ".format(args.input.upper()))
 
