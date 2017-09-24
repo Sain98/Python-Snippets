@@ -3,6 +3,14 @@ import argparse
 __author__ = "Sain"
 __version__ = 2
 
+"""
+def calculator(input_type, input_values):
+	# todo
+
+	convert(input_type, input_value)
+"""
+
+## == CONVERTER == ##
 
 def convert(input_type, input_value):
 	if input_type == 'hex':
@@ -57,7 +65,10 @@ def convert_value_dec_hex(src_value):
 	return hex(src_value)			# Dec -> hex
 
 def convert_value_to_ascii(src_value):
-	return chr(src_value)			# hex, dec -> ascii
+	if (32 <= src_value <= 126):		# 32 = space, 126 = ~ (tilde) - visible characters inbetween check ascii table for more info
+		return chr(src_value)			# hex, dec -> ascii
+	else:
+		return chr(32)					# Space (empty)
 
 def convert_value_dec_bin(src_value):
 	return bin(src_value)[2:]		# dec -> bin | Ignore the '0b'
@@ -68,16 +79,27 @@ def convert_value_ascii_hex(src_value):
 def convert_value_ascii_dec(src_value):
 	return ord(src_value)			# ascii -> dec
 
+## === END OF CONVERTER === ##
+
 
 def main():
 	parser = argparse.ArgumentParser()
-	parser.add_argument("-i", '--input', type=str.lower, 
+
+	parser.add_argument("-i", "--input", type=str.lower, 
 						choices=['hex', 'ascii', 'ascii-table', 'dec'],
 						help="The sort off input value you will give. Default is hex")
-	parser.add_argument("-n", '--no-exit', action='store_true',
+
+	parser.add_argument("-n", "--no-exit", action='store_true',
 						help="Disable all the exit commands you would need to exit using ctrl+c")
-	parser.add_argument("-d", '--direct', action='store_true',
-						help="No loop, just directly converts and gives you the result then closes")
+
+	parser.add_argument("-v", "--value", "-d", "--direct", type=str.lower,
+						help="""No loop, just directly converts the given value after the -v (--value) parameter
+								Example: -i hex --value 0xff""")
+
+
+	parser.add_argument("-c", "--calculate", action='store_true',
+						help="""Enables calculater mode making it possible to for example do '0xff + 0xff' get  '0x1fe' as result
+								This will still print all the output values aswell (dec, ascii, bin)""")
 	
 	"""
 	Input types; hex, ascii, dec
@@ -85,7 +107,8 @@ def main():
 
 	args.input
 	args.no_exit
-	args.direct
+	args.value
+	args.calculate
 	"""
 
 	args = parser.parse_args()
@@ -100,11 +123,12 @@ def main():
 
 	user_in = ""
 
-	if args.direct != True:
+	if args.value == None:
 		print("Startup args:")
 		print("Input = {}".format(args.input))
 		print("no-exit = {}".format(args.no_exit))
-		print("direct = {}".format(args.direct))
+		print("value = {}".format(args.value))
+		print("Calculate = {}".format(args.calculate))
 		print("Starting hex_converter!")
 		print("Available exit commands: {}".format(exit_commands))
 		print("----")
@@ -112,14 +136,17 @@ def main():
 		while user_in not in exit_commands:
 			user_in = input("{}: ".format(args.input.upper()))
 
-			if user_in not in exit_commands:
+			if user_in not in exit_commands: # and args.calculate == False:
 				convert(args.input, user_in)
 
-	else:
-		# args.direct == True
-		user_in = input("{}: ".format(args.input))
+			"""
+			elif user_in not in exit_commands and args.calculate == True:
+				# todo
+				calculator(args.input, user_in)
+			"""
 
-		convert(args.input, user_in)
+	else:
+		convert(args.input, args.value)
 
 	return 0
 
