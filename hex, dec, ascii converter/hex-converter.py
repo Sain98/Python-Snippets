@@ -1,7 +1,6 @@
 import argparse
 
 __author__ = "Sain"
-__version__ = 2
 
 """
 def calculator(input_type, input_values):
