@@ -92,7 +92,7 @@ def main():
 	parser.add_argument("-n", "--no-exit", action='store_true',
 						help="Disable all the exit commands you would need to exit using ctrl+c")
 
-	parser.add_argument("-v", "--value", "-d", "--direct", type=str.lower,
+	parser.add_argument("-v", "--value", "-d", "--direct", type=str,
 						help="""No loop, just directly converts the given value after the -v (--value) parameter
 								Example: -i hex --value 0xff""")
 
